@@ -3,244 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oso Car Vips S.A. | Catálogo Digital</title>
-    <!-- Fuentes Modernas -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Oso Car Vips S.A. | Exclusive Motors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary-gold: #FFD700; /* Ajustado a la estética de su logo */
-            --bg-dark: #0f0f0f;
-            --card-bg: #1a1a1a;
-            --text-white: #ffffff;
-            --text-gray: #a0a0a0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            padding-bottom: 50px;
-        }
-
-        /* Header */
-        header {
-            padding: 40px 20px;
-            text-align: center;
-            background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-            border-bottom: 1px solid #333;
-        }
-
-        .logo-placeholder {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        /* Buscador */
-        .search-container {
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            background-color: var(--bg-dark);
-            z-index: 100;
-        }
-
-        #carSearch {
-            width: 100%;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #333;
-            background-color: #222;
-            color: white;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        #carSearch:focus {
-            border-color: var(--primary-gold);
-        }
-
-        /* Grid de Vehículos */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            border: 1px solid #222;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 200px;
-            background-color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
-            position: relative;
-        }
-
-        .badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: var(--primary-gold);
-            color: black;
-            padding: 5px 10px;
-            font-weight: 700;
-            font-size: 0.7rem;
-            border-radius: 5px;
-            text-transform: uppercase;
-        }
-
-        .card-content {
-            padding: 15px;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .card-info {
-            color: var(--text-gray);
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-        }
-
-        .price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-gold);
-            margin-bottom: 15px;
-        }
-
-        .btn-ws {
-            display: block;
-            text-align: center;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: opacity 0.2s;
-        }
-
-        .btn-ws:hover {
-            opacity: 0.9;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #444;
-            font-size: 0.8rem;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: white; }
+        .glass-nav { background: rgba(15, 15, 15, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid #222; }
+        .car-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #111; border: 1px solid #222; }
+        .car-card:hover { transform: translateY(-10px); border-color: #FFD700; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1); }
+        .gold-gradient { background: linear-gradient(90deg, #FFD700, #B8860B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.6), #050505), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1920'); background-size: cover; background-position: center; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-placeholder">OSO CAR VIPS S.A.</div>
-        <div class="subtitle">Importación de Vehículos VIP y Convencionales</div>
-    </header>
+    <!-- Navegación -->
+    <nav class="glass-nav fixed w-full z-50 px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-extrabold tracking-tighter">OSO CAR <span class="text-yellow-500">VIPS</span></div>
+        <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest">
+            <a href="#catalogo" class="hover:text-yellow-500 transition">Stock</a>
+            <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
+            <a href="https://wa.me/595981113181" class="bg-yellow-500 text-black px-4 py-2 rounded-full hover:bg-white transition">Vender mi auto</a>
+        </div>
+    </nav>
 
-    <div class="search-container">
-        <input type="text" id="carSearch" placeholder="Buscar por marca o modelo (ej. Toyota, Hilux)..." onkeyup="filterCars()">
-    </div>
+    <!-- Hero Section -->
+    <section class="hero-bg h-[80vh] flex items-center justify-center text-center px-4">
+        <div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">MOVILIDAD <span class="gold-gradient">EXCLUSIVE</span></h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">Importación directa de vehículos seleccionados y atención VIP en Paraguay.</p>
+            <a href="#catalogo" class="border-2 border-yellow-500 text-yellow-500 px-8 py-4 rounded-full font-bold hover:bg-yellow-500 hover:text-black transition">EXPLORAR STOCK</a>
+        </div>
+    </section>
 
-    <div class="grid" id="carGrid">
-        <!-- Vehículo 1 -->
-        <div class="card" data-name="Toyota Hilux 2021">
-            <div class="card-img">
-                <span class="badge">Recién Importado</span>
-                <!-- Aquí iría la imagen real -->
-                [IMAGEN VEHÍCULO]
+    <!-- Filtros -->
+    <section id="catalogo" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <h2 class="text-3xl font-bold mb-2">Nuestro Inventario</h2>
+                <p class="text-gray-500">Encontrá el vehículo que se adapta a tu estilo.</p>
             </div>
-            <div class="card-content">
-                <h3 class="card-title">Toyota Hilux</h3>
-                <p class="card-info">Año 2021 | Diesel | Automática | 4x4</p>
-                <p class="price">US$ 42.500</p>
-                <a href="https://wa.me/595981113181?text=Hola! Me interesa la Toyota Hilux 2021" target="_blank" class="btn-ws">Consultar por WhatsApp</a>
+            <div class="w-full md:w-1/3">
+                <input type="text" id="searchInput" onkeyup="renderCars()" placeholder="Buscar marca, modelo o año..." class="w-full bg-[#111] border border-[#333] p-4 rounded-xl focus:border-yellow-500 outline-none text-white">
             </div>
         </div>
 
-        <!-- Vehículo 2 -->
-        <div class="card" data-name="Kia Sportage 2017">
-            <div class="card-img">
-                <span class="badge">Oferta Semana</span>
-                [IMAGEN VEHÍCULO]
-            </div>
-            <div class="card-content">
-                <h3 class="card-title">Kia Sportage</h3>
-                <p class="card-info">Año 2017 | Nafta | Automática | Blanco</p>
-                <p class="price">US$ 16.800</p>
-                <a href="https://wa.me/595981113181?text=Hola! Me interesa la Kia Sportage 2017" target="_blank" class="btn-ws">Consultar por WhatsApp</a>
-            </div>
+        <!-- Grid de Autos -->
+        <div id="carContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Los autos se cargan vía JavaScript -->
         </div>
+    </section>
 
-        <!-- Vehículo 3 -->
-        <div class="card" data-name="Toyota Corolla 2023">
-            <div class="card-img">
-                <span class="badge">0 Km</span>
-                [IMAGEN VEHÍCULO]
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="bg-[#111] py-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Contactá con un <span class="text-yellow-500">Asesor VIP</span></h2>
+                <p class="text-gray-400 mb-8">Estamos en Mariano Roque Alonso listos para coordinar tu próximo test drive.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+                        <span>Mariano Roque Alonso, Paraguay</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-phone text-yellow-500"></i>
+                        <span>+595 981 113 181</span>
+                    </div>
+                </div>
             </div>
-            <div class="card-content">
-                <h3 class="card-title">Toyota Corolla Hybrid</h3>
-                <p class="card-info">Año 2023 | Híbrido | Automático | Gris</p>
-                <p class="price">US$ 28.900</p>
-                <a href="https://wa.me/595981113181?text=Hola! Me interesa el Toyota Corolla 2023" target="_blank" class="btn-ws">Consultar por WhatsApp</a>
-            </div>
+            <form class="space-y-4">
+                <input type="text" placeholder="Nombre completo" class="w-full bg-[#050505] border border-[#333] p-4 rounded-xl">
+                <input type="email" placeholder="Correo electrónico" class="w-full bg-[#050505] border border-[#333] p-4 rounded-xl">
+                <textarea placeholder="¿En qué vehículo estás interesado?" class="w-full bg-[#050505] border border-[#333] p-4 rounded-xl h-32"></textarea>
+                <button type="button" class="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-white transition">ENVIAR CONSULTA</button>
+            </form>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        Desarrollado por NovaTec Engineering &copy; 2026<br>
-        Mariano Roque Alonso, Paraguay
+    <footer class="py-10 text-center border-t border-[#222] text-gray-600 text-sm">
+        NOVATEC ENGINEERING &copy; 2026 - Soluciones Digitales de Alta Gama.
     </footer>
 
     <script>
-        function filterCars() {
-            let input = document.getElementById('carSearch');
-            let filter = input.value.toLowerCase();
-            let grid = document.getElementById('carGrid');
-            let cards = grid.getElementsByClassName('card');
+        // ACÁ AGREGÁS TUS AUTOS FÁCILMENTE
+        const cars = [
+            { brand: "Toyota", model: "Hilux GR-Sport", year: "2024", price: "485.000.000", img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800", type: "Diesel 4x4" },
+            { brand: "Mercedes-Benz", model: "GLE 450", year: "2022", price: "620.000.000", img: "https://images.unsplash.com/photo-1606148664390-671802117566?q=80&w=800", type: "Híbrido" },
+            { brand: "Kia", model: "Sorento", year: "2021", price: "245.000.000", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800", type: "Automático" },
+            { brand: "Volkswagen", model: "Amarok V6", year: "2023", price: "390.000.000", img: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=800", type: "Diesel" }
+        ];
 
-            for (let i = 0; i < cards.length; i++) {
-                let name = cards[i].getAttribute('data-name');
-                if (name.toLowerCase().indexOf(filter) > -1) {
-                    cards[i].style.display = "";
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
+        function renderCars() {
+            const container = document.getElementById('carContainer');
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            container.innerHTML = '';
+
+            const filtered = cars.filter(c => 
+                c.brand.toLowerCase().includes(search) || 
+                c.model.toLowerCase().includes(search)
+            );
+
+            filtered.forEach(car => {
+                container.innerHTML += `
+                    <div class="car-card rounded-2xl overflow-hidden">
+                        <div class="h-56 bg-cover bg-center" style="background-image: url('${car.img}')"></div>
+                        <div class="p-6">
+                            <span class="text-[10px] bg-yellow-500 text-black px-2 py-1 rounded font-bold uppercase">${car.year}</span>
+                            <h3 class="text-xl font-bold mt-2">${car.brand} ${car.model}</h3>
+                            <p class="text-gray-500 text-sm mb-4">${car.type}</p>
+                            <div class="text-2xl font-extrabold text-yellow-500 mb-6">${car.price} Gs.</div>
+                            <a href="https://wa.me/595981113181?text=Me interesa el ${car.brand} ${car.model}" class="block text-center border border-white py-3 rounded-lg font-bold hover:bg-white hover:text-black transition">Ver Detalles</a>
+                        </div>
+                    </div>
+                `;
+            });
         }
+
+        renderCars(); // Carga inicial
     </script>
 </body>
 </html>
