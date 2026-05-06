@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oso Car Vips S.A. | Catálogo Digital</title>
+    <!-- Fuentes Modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gold: #FFD700; /* Ajustado a la estética de su logo */
+            --bg-dark: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            padding-bottom: 50px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-bottom: 1px solid #333;
+        }
+
+        .logo-placeholder {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Buscador */
+        .search-container {
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-dark);
+            z-index: 100;
+        }
+
+        #carSearch {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background-color: #222;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        #carSearch:focus {
+            border-color: var(--primary-gold);
+        }
+
+        /* Grid de Vehículos */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #222;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            position: relative;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary-gold);
+            color: black;
+            padding: 5px 10px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .card-info {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+        }
+
+        .btn-ws {
+            display: block;
+            text-align: center;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+
+        .btn-ws:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #444;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-placeholder">OSO CAR VIPS S.A.</div>
+        <div class="subtitle">Importación de Vehículos VIP y Convencionales</div>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="carSearch" placeholder="Buscar por marca o modelo (ej. Toyota, Hilux)..." onkeyup="filterCars()">
+    </div>
+
+    <div class="grid" id="carGrid">
+        <!-- Vehículo 1 -->
+        <div class="card" data-name="Toyota Hilux 2021">
+            <div class="card-img">
+                <span class="badge">Recién Importado</span>
+                <!-- Aquí iría la imagen real -->
+                [IMAGEN VEHÍCULO]
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Toyota Hilux</h3>
+                <p class="card-info">Año 2021 | Diesel | Automática | 4x4</p>
+                <p class="price">US$ 42.500</p>
+                <a href="https://wa.me/595981113181?text=Hola! Me interesa la Toyota Hilux 2021" target="_blank" class="btn-ws">Consultar por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Vehículo 2 -->
+        <div class="card" data-name="Kia Sportage 2017">
+            <div class="card-img">
+                <span class="badge">Oferta Semana</span>
+                [IMAGEN VEHÍCULO]
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Kia Sportage</h3>
+                <p class="card-info">Año 2017 | Nafta | Automática | Blanco</p>
+                <p class="price">US$ 16.800</p>
+                <a href="https://wa.me/595981113181?text=Hola! Me interesa la Kia Sportage 2017" target="_blank" class="btn-ws">Consultar por WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Vehículo 3 -->
+        <div class="card" data-name="Toyota Corolla 2023">
+            <div class="card-img">
+                <span class="badge">0 Km</span>
+                [IMAGEN VEHÍCULO]
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Toyota Corolla Hybrid</h3>
+                <p class="card-info">Año 2023 | Híbrido | Automático | Gris</p>
+                <p class="price">US$ 28.900</p>
+                <a href="https://wa.me/595981113181?text=Hola! Me interesa el Toyota Corolla 2023" target="_blank" class="btn-ws">Consultar por WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Desarrollado por NovaTec Engineering &copy; 2026<br>
+        Mariano Roque Alonso, Paraguay
+    </footer>
+
+    <script>
+        function filterCars() {
+            let input = document.getElementById('carSearch');
+            let filter = input.value.toLowerCase();
+            let grid = document.getElementById('carGrid');
+            let cards = grid.getElementsByClassName('card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let name = cards[i].getAttribute('data-name');
+                if (name.toLowerCase().indexOf(filter) > -1) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
